@@ -1,0 +1,13 @@
+
+image: golang
+
+
+
+stages:
+    - test
+
+format:
+    stage: test
+    script:
+      - go test -race $(go list ./... | grep -v /vendor/)
+
